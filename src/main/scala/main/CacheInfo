@@ -1,0 +1,13 @@
+== Physical Plan ==
+*(1) SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, input[0, java.lang.String, true], true, false) AS value#2]
++- *(1) Filter main.Test$$$Lambda$1808/758104368@30c7be6f.apply
+   +- Scan[obj#1]
+()
+
+== Physical Plan ==
+*(1) Filter main.Test$$$Lambda$1949/1396827930@6afeaf2d.apply
++- InMemoryTableScan [value#22]
+      +- InMemoryRelation [value#22], StorageLevel(disk, memory, deserialized, 1 replicas)
+            +- *(1) SerializeFromObject [staticinvoke(class org.apache.spark.unsafe.types.UTF8String, StringType, fromString, input[0, java.lang.String, true], true, false) AS value#22]
+               +- Scan[obj#21]
+()
